@@ -1,0 +1,25 @@
+
+{% include 'base.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="../static/css/LoginForm.css">
+{% endblock %}
+
+{% block body %}
+  <section>
+    <form>
+        <h3>Login</h3>
+      
+        <label for="username">Email</label>
+        <input type="text" placeholder="Email" id="username">
+      
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+      
+        <button>Login</button>
+        <div class="footer">
+          <a href="{{url_for('register')}}" class="go">Or create Account</a>
+        </div>
+    </form>
+  </section>
+{% endblock %}
