@@ -12,10 +12,9 @@ headers = {
 
 def cryptoSearch(selected_crypto, selected_currency):
     url ='https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest'
-    selected_currency = selected_currency.upper()
     parameters = {
-        'slug' : selected_crypto,
-        'convert' : selected_currency
+        'slug' : str(selected_crypto),
+        'convert' : str(selected_currency).upper()
     }
     session = Session()
     session.headers.update(headers)

@@ -1,70 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">                                                                                   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <title>CryptoSolo</title>
-</head>
-<body>
-    <header>
-        <a href="#" class="logo">SoloCrypto.</a>
-        <div class="group">
-          <ul class="navigation">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          <ul class="action">
-            <li><a href="#"><ion-icon name="person-outline"></ion-icon></a></li>
-            <div class="menuToggle">
-              <ion-icon name="menu-outline"></ion-icon>
-              <ion-icon name="close-outline"></ion-icon>
-            </div>
-          </ul>
-        </div>
-      </header>
-      <div class="banner">
-        <div class="bg">
-          <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" class="cover">
-          <div class="content">
-            <h2>Explore The New World</h2>
-            <a href="#" class="btn">Explore Features</a>
-          </div>
-          <form class="searchBox" method="post">
-            <div class="inputBx">
-              <p>What Crypto Do You Want to Search?</p>
-              <select name="crypto" >
-                <option value="bitcoin"> BTC </option>
-                <option value="ethereum"> ETH </option>
-                <option value="solana"> SOLANA </option>
-              </select>
-            </div>
-            <div class="inputBx">
-              <p for="fiats">Choose a FIAT:</p>
-                <select name="fiats" >
-                  <option value="USD">USD - Dólar </option>
-                  <option value="EUR">EUR - Euro </option>
-                  <option value="BRL">BRL - Real Brasileiro</option>
-                </select>
-            </div>
-            <div class="inputBx">
-              <p class="white">_</p>
-              <input type="Submit" value="Find">
-            </div>
-          </div>
-        </div>
-      </div>    
-      <script>
-    let menuToggle = document.querySelector('.menuToggle');
-    let navigation = document.querySelector('.navigation');
-    menuToggle.onclick = function(){
-      menuToggle.classList.toggle('active');
-      navigation.classList.toggle('active');
-    }
-      </script>
-</body>
+{% extends 'base.html' %}
+
+  {% block head %}
+    <link rel="stylesheet" href="../static/css/SearchBox.css">
+  {% endblock %}
+
+{% block body %}
+    {% include 'Banner.html' %}
+{% endblock %}
+
+
+
 </html>

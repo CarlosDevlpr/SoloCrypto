@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="../static/css/Banner.css">
+
+<div class="banner">
+    <div class="bg">
+      <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" class="cover">
+      <div class="content">
+        <h2>Explore The New World</h2>
+        <a href="#" class="btn">Explore Features</a>
+      </div>
+      <form class="searchBox" method="post">
+        <div class="inputBx">
+          <p>What Crypto Do You Want to Search?</p>
+          <input type="text" name="crypto" placeholder="Example: bitcoin" required>
+          <!-- <select name="crypto" >
+            <option value="bitcoin"> BTC </option>
+            <option value="ethereum"> ETH </option>
+            <option value="solana"> SOLANA </option>
+          </select> -->
+        </div>
+
+        <div class="inputBx">
+          <p for="fiats">Choose a FIAT:</p>
+          <div class="dropdown">
+            <input type="text" required class="text" value = 'USD'  name="fiats" readonly placeholder="Select the currency..." >
+            <div class="option">
+                <div onclick="show('USD')"><img src="../static/img/fiats/dollar.png"> <div> - American Dolar </div> </div> 
+                <div onclick="show('EUR')"><img src="../static/img/fiats/euro.png"> <div> - Euro </div> </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="inputBx">
+          <p class="white">_</p>
+          <input type="Submit" value="Find">
+        </div>
+      </form>
+    </div>
+  </div>    
+  
+  <script>
+    function show(a){
+      document.querySelector('.text').value = a;
+    }
+    let dropdown = document.querySelector('.dropdown');
+    dropdown.onclick = function(){
+      dropdown.classList.toggle('active')
+    }
+</script>
