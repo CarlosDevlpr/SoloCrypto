@@ -1,9 +1,9 @@
-{% block head %}
-  <link rel="stylesheet" href="../static/css/LoggedHeader.css">
-{% endblock %}
+<link rel="stylesheet" href="../static/css/admin/LoggedHeader.css">
+
 
 <div class="navigation">
     <ul>
+    {% if url_for('home') %}
         <li class="list active">
             <b></b>
             <b></b>
@@ -11,11 +11,11 @@
                 <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                 <span class="title">Home</span>
             </a>
-        </li>
+        </li>    
         <li class="list">
             <b></b>
             <b></b>
-            <a href="#">
+            <a href="{{ url_for('profile')}}">
                 <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                 <span class="title">Profile</span>
             </a>
@@ -60,6 +60,66 @@
                 <span class="title">Logout</span>
             </a>
         </li>
+    {% else %}
+        {% if url_for('profile') %}
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>    
+            <li class="list active">
+                <b></b>
+                <b></b>
+                <a href="{{ url_for('profile')}}">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                    <span class="title">Messages</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="title">Setting</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
+                    <span class="title">Help</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="#">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <span class="title">Password</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="{{ url_for('logout') }}">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Logout</span>
+                </a>
+            </li>
+            {% endif %}
+    {% endif %}
     </ul>
 </div>
 

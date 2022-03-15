@@ -10,8 +10,8 @@ def home():
         crypto = str(request.form.get('crypto')).lower()
         currency = str(request.form.get('fiats'))
         cryptodict = cryptoSearch(crypto, currency)
-        return render_template('searchresult.html', cryptodict = cryptodict)
-    return render_template('home.html')
+        return render_template('public/searchresult.html', cryptodict = cryptodict)
+    return render_template('public/home.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -29,7 +29,7 @@ def login():
                 return redirect(url_for('homelogin'))
         else:
             flash('Login Failed. Invalid Email or Password, please try again.', 'alert-danger')
-    return render_template('login.html', form_login = form_login)
+    return render_template('public/login.html', form_login = form_login)
 
 @app.route('/register', methods=['GET','POST'])
 def register():
@@ -42,15 +42,20 @@ def register():
         flash(f'Account created successfully for the email: {form_create_account.email.data}.', 'alert-sucess')
         login_user(user)
         return redirect(url_for('homelogin'))
-    return render_template('register.html', form_create_account = form_create_account)
+    return render_template('public/register.html', form_create_account = form_create_account)
 
 @app.route('/homelogin')
 @login_required
 def homelogin():
-    return render_template('loginhome.html')
+    return render_template('admin/loginhome.html')
+
+@app.route('/profile')
+@login_required
+def profile():
+    return render_template('admin/profile.html')
 
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('login'))
+    return redirect(url_for('home'))

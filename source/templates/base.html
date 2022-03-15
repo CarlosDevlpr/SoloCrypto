@@ -13,9 +13,9 @@
 <body>
 
     {% if current_user.is_authenticated %}
-        {% include 'LoggedHeader.html' %}
+        {% include 'admin/LoggedHeader.html' %}
     {% else %}
-        {% include 'PublicHeader.html' %}
+        {% include 'public/PublicHeader.html' %}
     {% endif %}
 
     {% block body %}
