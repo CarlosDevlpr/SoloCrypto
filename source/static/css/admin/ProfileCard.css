@@ -7,7 +7,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-
+	backdrop-filter: blur(10px);
 	min-height: 100vh;
 	margin: 0;
 }
